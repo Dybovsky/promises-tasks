@@ -6,7 +6,21 @@
  * with the string "All items in the array should be of type string"
  * @param {string[]} arrayOfStrings
  */
+
 function makeAllCapsAsync(arrayOfStrings) {
+  let myPromise = new Promise((resolve, reject) => {
+    let newarr = [];
+    for (let i = 0; i < arrayOfStrings.length; i++) {
+      if (typeof arrayOfStrings[i] === "string") {
+        newarr.push(arrayOfStrings[i].toUpperCase());
+      } else {
+        reject("All items in the array should be of type string");
+      }
+    }
+    resolve(newarr);
+  });
+
+  return myPromise;
   // Your code
 }
 

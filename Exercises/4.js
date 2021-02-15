@@ -6,6 +6,15 @@
  */
 function resolveMeMaybe(shouldResolve) {
   // Your code
+  return new Promise((resolve, reject) => {
+    if (shouldResolve) {
+      resolve();
+    } else {
+      reject();
+    }
+  });
 }
+
+// Your code
 
 export default resolveMeMaybe;

@@ -3,7 +3,10 @@
  * that resolves with the string value "Nested promise value"
  */
 const myPromise = new Promise((resolve, reject) => {
-  // Your code here
+  resolve(
+    new Promise((resolve, reject) => {
+      resolve("Nested promise value");
+    })
+  );
 });
-
 export default myPromise;
